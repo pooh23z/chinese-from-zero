@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>จีนตั้งแต่ศูนย์ · เรียนภาษาจีนสำหรับมือใหม่</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5f3;--card:#fff;--ink:#14201c;--mut:#5d6d66;--line:#d5dcd8;--jade:#1f6f5c;--red:#c8372d;--ok:#1f7a4d;--bad:#b3261e;--t1:#2b6cb0;--t2:#2f855a;--t3:#b7791f;--t4:#c53030;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1715;--card:#17211e;--ink:#e8efec;--mut:#93a49d;--line:#2a3833;--jade:#4fb59b;--red:#ef6a5e;--ok:#5fc08a;--bad:#f07a72;--t1:#63a4f0;--t2:#5fc08a;--t3:#e0a84a;--t4:#f07a72;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1715;--card:#17211e;--ink:#e8efec;--mut:#93a49d;--line:#2a3833;--jade:#4fb59b;--red:#ef6a5e;--ok:#5fc08a;--bad:#f07a72;--t1:#63a4f0;--t2:#5fc08a;--t3:#e0a84a;--t4:#f07a72;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 'Noto Sans Thai',system-ui,-apple-system,'Segoe UI',sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 56px}
+.hz{font-family:'Noto Serif SC','Songti SC','STSong','SimSun',serif;font-weight:900}
+header{display:flex;align-items:center;gap:14px}
+.seal{flex:none;width:52px;height:52px;background:var(--red);color:#fff;display:grid;place-items:center;font-size:30px;border-radius:6px;transform:rotate(-4deg)}
+h1{font-size:1.45rem;line-height:1.25;margin:0}
+header p{margin:2px 0 0;color:var(--mut);font-size:.9rem}
+.bar{height:6px;background:var(--line);border-radius:3px;margin:16px 0 4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--jade);transition:width .3s}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 0 14px;scrollbar-width:thin}
+nav button{flex:none;font:inherit;font-size:.9rem;padding:7px 13px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;cursor:pointer}
+nav button[aria-current=true]{background:var(--jade);border-color:var(--jade);color:#fff}
+nav button.d::after{content:" ✓"}
+h2{font-size:1.25rem;margin:4px 0 8px}
+h3{font-size:1rem;margin:20px 0 8px}
+p{margin:0 0 12px}
+.mut{color:var(--mut);font-size:.9rem}
+.note{border-left:4px solid var(--jade);background:var(--card);padding:10px 14px;margin:14px 0;border-radius:0 8px 8px 0;font-size:.93rem}
+.btn,.sp{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 16px;cursor:pointer}
+.btn.ok,.btn.main{background:var(--jade);border-color:var(--jade);color:#fff}
+.sp{padding:6px 11px;border-radius:50%}
+button:focus-visible{outline:3px solid var(--jade);outline-offset:2px}
+.row{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:8px}
+.row .hz{font-size:1.8rem;min-width:3.4em;line-height:1.2}
+.row.long .hz{font-size:1.2rem;min-width:0;flex:1.2}
+.mid{flex:1;display:flex;flex-direction:column}
+.mid span{color:var(--mut);font-size:.9rem}
+.tones{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tc{background:var(--card);border:1px solid var(--line);border-top-width:4px;border-radius:10px;padding:12px}
+.tc svg{width:60px;height:40px;display:block;fill:none;stroke-width:4;stroke-linecap:round}
+.tc b{display:block}.tc .hz{font-size:1.7rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px}
+.chip{font:inherit;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--ink);cursor:pointer}
+.chip b{font-size:1.25rem;color:var(--jade)}.chip small{color:var(--mut);font-size:.78rem;text-align:center}.chip .hz{font-size:1.3rem}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:12px 0}
+.opt{font:inherit;padding:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;cursor:pointer}
+.opt.good{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 18%,var(--card))}
+.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 16%,var(--card))}
+.opt .hz{font-size:1.4rem}
+.fc{background:var(--card);border:1px solid var(--line);border-radius:14px;min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;text-align:center;padding:16px}
+.huge{font-size:3.6rem;line-height:1.2}
+.py{font-size:1.8rem;font-weight:700;color:var(--jade)}
+.acts{display:flex;gap:8px;align-items:center;justify-content:center;margin:14px 0}
+.qq{text-align:center;padding:14px 0;font-size:1.15rem}
+.sc{font-size:3rem;font-weight:700;color:var(--jade)}
+.road{list-style:none;padding:0;margin:0}
+.road li{margin-bottom:8px}
+.road button{width:100%;text-align:left;font:inherit;display:flex;justify-content:space-between;gap:10px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--ink);cursor:pointer}
+.road span{color:var(--mut);font-size:.88rem}
+.lvs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 16px}
+.btn.sm{padding:3px 10px;font-size:.82rem}
+.wb{margin-bottom:18px;break-inside:avoid}
+.wh{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.wh .wbig{font-size:1.5rem;color:var(--red)}
+.wh .mut{flex:1;min-width:140px}
+.wa{display:flex;gap:6px;align-items:center}
+.wr{display:grid;grid-template-columns:repeat(auto-fill,minmax(62px,1fr));border-top:1px solid var(--red);border-left:1px solid var(--red)}
+.wc{position:relative;aspect-ratio:1;border-right:1px solid var(--red);border-bottom:1px solid var(--red);background:linear-gradient(var(--line),var(--line)) center/1px 100% no-repeat,linear-gradient(var(--line),var(--line)) center/100% 1px no-repeat,var(--card);display:flex;align-items:center;justify-content:center;font-size:2.4rem;line-height:1}
+.wc.m{color:var(--ink)}
+.wc.t .hz{color:color-mix(in srgb,var(--ink) 20%,transparent)}
+.wc canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+@media print{header,.bar,#pt,nav,.noprint,.btn,.sp{display:none!important}body{background:#fff;color:#000}.wrap{max-width:none;padding:0}.wr{grid-template-columns:repeat(10,17mm)}.wc{width:17mm;height:17mm;font-size:12.5mm;background-color:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="seal hz" aria-hidden="true">学</div><div><h1>จีนตั้งแต่ศูนย์</h1><p>เรียนทีละขั้น ฟังเสียงได้ ทดสอบได้ ไม่ต้องมีพื้นฐาน</p></div></header>
+<div class="bar" role="progressbar" aria-label="ความคืบหน้า" aria-valuemin="0" aria-valuemax="5"><i id="pg"></i></div>
+<div class="mut" id="pt"></div>
+<nav id="nav" aria-label="บทเรียน"></nav>
+<main id="view"></main>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const HAS=('speechSynthesis' in window);
+function say(t){try{if(!HAS)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=.8;speechSynthesis.speak(u)}catch(e){}}
+const D={
+greet:[['你好','nǐ hǎo','สวัสดี'],['你好吗？','nǐ hǎo ma?','สบายดีไหม'],['我很好','wǒ hěn hǎo','ฉันสบายดี'],['谢谢','xièxie','ขอบคุณ'],['不客气','bú kèqi','ยินดี / ไม่ต้องเกรงใจ'],['对不起','duìbuqǐ','ขอโทษ'],['没关系','méi guānxi','ไม่เป็นไร (ตอบคำขอโทษ)'],['再见','zàijiàn','ลาก่อน'],['请','qǐng','กรุณา / เชิญ'],['是','shì','เป็น / ใช่'],['不','bù','ไม่'],['我','wǒ','ฉัน'],['你','nǐ','คุณ'],['他','tā','เขา'],['她','tā','เธอ (ผู้หญิง)']],
+num:[['一','yī','1'],['二','èr','2'],['三','sān','3'],['四','sì','4'],['五','wǔ','5'],['六','liù','6'],['七','qī','7'],['八','bā','8'],['九','jiǔ','9'],['十','shí','10']],
+sent:[['我是泰国人。','Wǒ shì Tàiguó rén.','ฉันเป็นคนไทย'],['你叫什么名字？','Nǐ jiào shénme míngzi?','คุณชื่ออะไร'],['我叫小明。','Wǒ jiào Xiǎomíng.','ฉันชื่อเสี่ยวหมิง'],['这是什么？','Zhè shì shénme?','นี่คืออะไร'],['多少钱？','Duōshao qián?','ราคาเท่าไร'],['我不会说中文。','Wǒ bú huì shuō Zhōngwén.','ฉันพูดภาษาจีนไม่เป็น'],['请再说一遍。','Qǐng zài shuō yí biàn.','กรุณาพูดอีกครั้ง'],['我想学中文。','Wǒ xiǎng xué Zhōngwén.','ฉันอยากเรียนภาษาจีน']]
+};
+const W=[...D.greet,...D.num];
+const TN=[['ā','เสียง 1','สูงเรียบ ค้างระดับเดียว','妈','mā','แม่','M6 8H54','--t1'],['á','เสียง 2','เสียงขึ้น คล้ายจัตวา','麻','má','ป่าน','M6 30L54 8','--t2'],['ǎ','เสียง 3','ลงต่ำ แล้วขึ้นเล็กน้อย','马','mǎ','ม้า','M6 12Q24 42 54 8','--t3'],['à','เสียง 4','ตกเร็วและหนัก','骂','mà','ด่า','M6 6L54 34','--t4']];
+const INI=[['b','ป','爸'],['p','พ (เป่าลม)','怕'],['m','ม','妈'],['f','ฟ','发'],['d','ต','大'],['t','ท (เป่าลม)','他'],['n','น','你'],['l','ล','来'],['g','ก','哥'],['k','ค (เป่าลม)','可'],['h','ฮ (ลมในคอ)','好'],['j','จ (ลิ้นแบน)','家'],['q','ฉ (เป่าลม)','七'],['x','ซ เบาๆ','小'],['zh','จ ม้วนลิ้น','中'],['ch','ช ม้วนลิ้น','吃'],['sh','ซ ม้วนลิ้น','是'],['r','ร ม้วนลิ้น','人'],['z','ตส','做'],['c','ทส (เป่าลม)','菜'],['s','ซ','三']];
+const FIN=[['a','อา','他'],['o','โอ / อัว','我'],['e','เออ (ในลำคอ)','喝'],['i','อี','你'],['u','อู','不'],['ü','ปากห่อ ออกเสียงอี','女'],['ai','ไอ','爱'],['ei','เอย์','给'],['ao','เอา','好'],['ou','โอว','手'],['an','อาน','山'],['en','เอิน','很'],['ang','อาง','忙'],['eng','เออง','风'],['ong','อง (ปากห่อ)','中']];
+const T=[['start','เริ่มต้น'],['tone','1 วรรณยุกต์'],['pin','2 พินอิน'],['greet','3 คำทักทาย'],['num','4 ตัวเลข'],['sent','5 ประโยค'],['write','คัดเขียน'],['card','แฟลชการ์ด'],['quiz','ทดสอบ']];
+const L=['tone','pin','greet','num','sent'];
+let done={},cur='start',tq=0,deck=[],flip=false,qz=null;
+try{done=JSON.parse(localStorage.getItem('cnd')||'{}')||{}}catch(e){}
+const save=()=>{try{localStorage.setItem('cnd',JSON.stringify(done))}catch(e){}};
+const rows=(a,l)=>a.map(([h,p,t])=>`<div class="row${l?' long':''}"><div class="hz">${h}</div><div class="mid"><b>${p}</b><span>${t}</span></div><button class="sp" data-say="${h}" aria-label="ฟังเสียง ${p}">🔊</button></div>`).join('');
+const fin=id=>`<p style="margin-top:18px"><button class="btn ${done[id]?'ok':''}" data-done="${id}">${done[id]?'เรียนบทนี้แล้ว ✓':'ทำเครื่องหมายว่าเรียนบทนี้แล้ว'}</button></p>`;
+const chips=a=>`<div class="grid">${a.map(([l,t,e])=>`<button class="chip" data-say="${e}"><b>${l}</b><small>${t}</small><span class="hz">${e}</span></button>`).join('')}</div>`;
+const V={
+start:()=>`<h2>เริ่มจากตรงนี้</h2><p>ภาษาจีนกลางมี 3 ส่วนหลัก ได้แก่ เสียง (พินอิน + วรรณยุกต์) ตัวอักษร และคำศัพท์ เว็บนี้ให้เรียนเสียงก่อน เพราะเป็นรากฐานของการฟังและพูด จากนั้นค่อยเพิ่มคำศัพท์และประโยค ใช้เวลาวันละ 15-20 นาทีก็พอ</p><ol class="road">${L.map((id,i)=>{const t=T.find(x=>x[0]===id)[1];const d={tone:'เสียงสูงต่ำ 4 แบบ',pin:'ตัวสะกดเสียง',greet:'15 คำแรก',num:'1-10',sent:'8 ประโยคใช้ได้จริง'}[id];return `<li><button data-go="${id}"><span style="color:var(--ink)">${t}</span><span>${d}${done[id]?' · เรียนแล้ว ✓':''}</span></button></li>`}).join('')}</ol><div class="note">กดปุ่ม 🔊 เพื่อฟังเสียงอ่านภาษาจีน${HAS?'':' (เบราว์เซอร์นี้ไม่รองรับเสียงอ่าน ให้ลองเปิดด้วย Chrome หรือ Safari)'} ถ้าไม่มีเสียง ให้ตรวจว่าเครื่องติดตั้งเสียงภาษาจีนแล้ว เมื่อเรียนครบทุกบท ลองฝึกต่อด้วยแท็บคัดเขียน แฟลชการ์ด และแบบทดสอบ</div>`,
+tone:()=>`<h2>วรรณยุกต์ 4 เสียง</h2><p>ภาษาจีนใช้ระดับเสียงเปลี่ยนความหมาย เหมือนภาษาไทย แต่ 4 เสียงของจีนไม่ตรงกับ 5 เสียงของไทยแบบหนึ่งต่อหนึ่ง ให้ดูรูปเส้นเสียงและฟังตามเสมอ</p><div class="tones">${TN.map(t=>`<div class="tc" style="border-top-color:var(${t[7]})"><svg viewBox="0 0 60 40" style="stroke:var(${t[7]})"><path d="${t[6]}"/></svg><b>${t[1]} ${t[0]}</b><span class="mut">${t[2]}</span><div class="hz">${t[3]}</div><span>${t[4]} · ${t[5]}</span> <button class="sp" data-say="${t[3]}" aria-label="ฟัง ${t[4]}">🔊</button></div>`).join('')}</div><div class="note">เสียงเบา (ไม่มีเครื่องหมาย) เช่น 吗 ma ออกเสียงสั้นและเบา<br>ถ้ามีเสียง 3 ติดกัน เสียงแรกจะเปลี่ยนเป็นเสียง 2 เช่น 你好 เขียน nǐ hǎo แต่พูดว่า ní hǎo</div><h3>ฝึกฟังแยกเสียง</h3><p class="mut">กด 🔊 แล้วเลือกว่าได้ยินเสียงไหน</p><button class="btn" data-act="tsay">🔊 ฟังเสียงโจทย์</button><div class="opts">${TN.map((t,i)=>`<button class="opt" data-tone="${i}">${t[1]}</button>`).join('')}</div><p id="tf" role="status"></p>${fin('tone')}`,
+pin:()=>`<h2>พินอิน: ตัวสะกดเสียง</h2><p>พินอินใช้ตัวอักษรโรมันเขียนเสียงอ่าน แตะแต่ละช่องเพื่อฟังตัวอย่าง</p><div class="note">ข้อดีของคนไทย: ภาษาไทยแยกเสียงไม่ใช้ลม (ป ต ก) กับเสียงใช้ลม (พ ท ค) ได้อยู่แล้ว ภาษาจีนก็แยกแบบนี้ b d g = ไม่เป่าลม ส่วน p t k = เป่าลม</div><h3>พยัญชนะต้น</h3>${chips(INI)}<h3>สระและตัวสะกด</h3>${chips(FIN)}<div class="note">ข้อควรระวัง<br>ü เมื่อตามหลัง j q x จะเขียนเป็น u เช่น 去 qù ยังออกเสียงปากห่อ<br>i หลัง zh ch sh r z c s ออกเสียงคล้ายอึ ไม่ใช่อี เช่น 是 shì</div>${fin('pin')}`,
+greet:()=>`<h2>คำทักทายและคำพื้นฐาน</h2><p>ฟังก่อน พูดตามเสียงดัง แล้วค่อยดูตัวอักษร</p>${rows(D.greet)}<div class="note">ประโยคคำถามเติม 吗 ma ท้ายประโยค เช่น 你好 → 你好吗？</div>${fin('greet')}`,
+num:()=>`<h2>ตัวเลข 1-10</h2>${rows(D.num)}<div class="note">เลขอื่นประกอบจากเลขพื้นฐาน<br>11 = 十一 (สิบ+หนึ่ง) · 20 = 二十 (สอง+สิบ) · 35 = 三十五<br>ลองอ่านออกเสียงตามเอง แล้วกดฟังเทียบ</div><p><button class="sp" data-say="十一，二十，三十五">🔊</button> <span class="mut">ฟัง 11, 20, 35</span></p>${fin('num')}`,
+sent:()=>`<h2>ประโยคพื้นฐาน</h2><p>โครงสร้างเหมือนไทย คือ ประธาน + กริยา + กรรม เช่น 我(ฉัน) 想(อยาก) 学(เรียน) 中文(ภาษาจีน)</p>${rows(D.sent,1)}<div class="note">ปฏิเสธใส่ 不 หน้ากริยา เช่น 我不是泰国人 = ฉันไม่ใช่คนไทย</div>${fin('sent')}`,
+write:()=>wView(),
+card:()=>`<h2>แฟลชการ์ด</h2><p class="mut">ดูตัวอักษรแล้วลองนึกเสียงและความหมาย จากนั้นแตะการ์ดเพื่อเช็กคำตอบ</p><div id="cv"></div>`,
+quiz:()=>`<h2>แบบทดสอบ 10 ข้อ</h2><div id="qv"></div>`
+};
+const ST=[['一','横 héng · ขีดนอน','เขียนจากซ้ายไปขวา'],['丨','竖 shù · ขีดตั้ง','จากบนลงล่าง'],['丿','撇 piě · สะบัดซ้าย','จากขวาบนสะบัดลงซ้าย ปลายเรียว'],['㇏','捺 nà · ลากขวา','จากซ้ายบนลากลงขวา ปลายหนา'],['丶','点 diǎn · จุด','กดสั้นๆ ลงมาทางขวา'],['㇀','提 tí · ปัดขึ้น','จากซ้ายล่างปัดขึ้นไปขวา'],['亅','竖钩 shù gōu · ตั้งแล้วเกี่ยว','ลากลงแล้วเกี่ยวปลายขึ้นซ้าย'],['㇕','横折 héng zhé · นอนแล้วหัก','ไปขวาแล้วหักลงตรงๆ']];
+const o='ลำดับขีด: ';
+const WL=[['0 ขีดพื้นฐาน',ST],['1 ตัวเลข',[['一','yī · 1',o+'横'],['二','èr · 2',o+'横 · 横'],['三','sān · 3',o+'横 · 横 · 横'],['四','sì · 4',o+'竖 · 横折 · 撇 · 竖弯 · 横'],['五','wǔ · 5',o+'横 · 竖 · 横折 · 横'],['六','liù · 6',o+'点 · 横 · 撇 · 点'],['七','qī · 7',o+'横 · 竖弯钩'],['八','bā · 8',o+'撇 · 捺'],['九','jiǔ · 9',o+'撇 · 横折弯钩'],['十','shí · 10',o+'横 · 竖']]],['2 ตัวอักษรพื้นฐาน',[['人','rén · คน',o+'撇 · 捺'],['大','dà · ใหญ่',o+'横 · 撇 · 捺'],['小','xiǎo · เล็ก',o+'竖钩 · 点 · 点'],['不','bù · ไม่',o+'横 · 撇 · 竖 · 点'],['好','hǎo · ดี',o+'撇点 · 撇 · 横 · 横撇 · 竖钩 · 横']]],['3 คำทักทาย',[['我','wǒ · ฉัน','7 ขีด · เช็กลำดับขีดจากแอป Pleco ก่อนเขียน'],['你','nǐ · คุณ','7 ขีด · เช็กลำดับขีดจากแอป Pleco ก่อนเขียน'],['他','tā · เขา','5 ขีด · เช็กลำดับขีดจากแอป Pleco ก่อนเขียน'],['是','shì · เป็น / ใช่','9 ขีด · เช็กลำดับขีดจากแอป Pleco ก่อนเขียน'],['请','qǐng · กรุณา','10 ขีด · เช็กลำดับขีดจากแอป Pleco ก่อนเขียน']]]];
+let wl=0,pen=null;
+const wcell=(c,k)=>k===0?`<div class="wc m hz">${c}</div>`:`<div class="wc${k<3?' t':''}">${k<3?`<span class="hz">${c}</span>`:''}<canvas></canvas></div>`;
+function wView(){const a=WL[wl][1];return `<h2>คัดเขียน</h2><p>ช่องแรกคือตัวอย่าง สองช่องจางให้เขียนทับ ที่เหลือเขียนเองโดยไม่ดูแบบ เขียนได้ด้วยนิ้ว เมาส์ หรือปากกาสไตลัส หรือกดพิมพ์ไปคัดบนกระดาษ</p><div class="lvs noprint">${WL.map((l,i)=>`<button class="btn ${i===wl?'main':''}" data-lv="${i}">ระดับ ${l[0]}</button>`).join('')}</div>${wl===0?'<div class="note">กฎลำดับขีด: บนก่อนล่าง · ซ้ายก่อนขวา · นอนก่อนตั้ง · สะบัดซ้ายก่อนลากขวา · กลางก่อนซ้ายขวา</div>':''}${a.map(([c,h,s])=>`<section class="wb"><div class="wh"><span class="hz wbig">${c}</span><b>${h}</b><span class="mut">${s}</span><span class="wa">${wl?`<button class="sp" data-say="${c}" aria-label="ฟังเสียง">🔊</button>`:''}<button class="btn sm" data-clr="">ล้าง</button></span></div><div class="wr">${[0,1,2,3,4,5,6,7,8,9].map(k=>wcell(c,k)).join('')}</div></section>`).join('')}<p class="noprint"><button class="btn" data-act="print">พิมพ์หน้านี้</button></p>`}
+function wInit(){const d=window.devicePixelRatio||1;document.querySelectorAll('.wc canvas').forEach(c=>{const r=c.getBoundingClientRect();c.width=r.width*d;c.height=r.height*d})}
+function prog(){const n=L.filter(i=>done[i]).length;$('#pg').style.width=n*20+'%';$('.bar').setAttribute('aria-valuenow',n);$('#pt').textContent=`เรียนแล้ว ${n} จาก 5 บท`}
+function show(id,keep){cur=id;$('#nav').innerHTML=T.map(([k,n])=>`<button data-go="${k}" class="${done[k]?'d':''}" ${k===id?'aria-current="true"':''}>${n}</button>`).join('');$('#view').innerHTML=V[id]();prog();if(!keep)window.scrollTo(0,0);if(id==='card')cStart();if(id==='quiz')qStart();if(id==='write')wInit()}
+const sh=a=>a.slice().sort(()=>Math.random()-.5);
+function cStart(){deck=sh(W);flip=false;cView()}
+function cView(){const v=$('#cv');if(!deck.length){v.innerHTML='<p class="py">จบรอบนี้แล้ว</p><button class="btn main" data-act="cstart">เริ่มรอบใหม่</button>';return}
+const c=deck[0];v.innerHTML=`<div class="fc" data-act="flip" role="button" tabindex="0">${flip?`<div class="hz" style="font-size:2rem">${c[0]}</div><div class="py">${c[1]}</div><div>${c[2]}</div>`:`<div class="hz huge">${c[0]}</div><small class="mut">แตะเพื่อดูคำตอบ</small>`}</div><div class="acts"><button class="sp" data-say="${c[0]}" aria-label="ฟังเสียง">🔊</button><button class="btn" data-act="again">ยังไม่แน่ใจ</button><button class="btn ok" data-act="know">จำได้</button></div><p class="mut" style="text-align:center">เหลืออีก ${deck.length} ใบ</p>`}
+function qStart(){const pool=sh(W).slice(0,10);qz={i:0,s:0,qs:pool.map((c,k)=>({c,t:k%2,opts:sh([c,...sh(W.filter(x=>x!==c)).slice(0,3)])}))};qView()}
+function qView(){const v=$('#qv');if(qz.i>=qz.qs.length){const s=qz.s;v.innerHTML=`<div class="sc">${s}/${qz.qs.length}</div><p>${s>=8?'เยี่ยมมาก พร้อมเรียนบทต่อไป':s>=5?'ใช้ได้เลย ลองทบทวนด้วยแฟลชการ์ดอีกรอบ':'ลองกลับไปทบทวนบทที่ 3 และ 4 แล้วทำใหม่'}</p><button class="btn main" data-act="qstart">ทำอีกครั้ง</button>`;return}
+const q=qz.qs[qz.i],c=q.c;v.innerHTML=`<p class="mut">ข้อ ${qz.i+1} จาก ${qz.qs.length}</p><div class="qq">${q.t?`“${c[2]}” ภาษาจีนคือข้อไหน`:`<span class="hz huge">${c[0]}</span><br>แปลว่าอะไร`}</div><div class="opts">${q.opts.map((o,k)=>`<button class="opt" data-opt="${k}">${q.t?`<span class="hz">${o[0]}</span>`:o[2]}</button>`).join('')}</div><div id="qf" role="status"></div>`}
+const A={
+tsay:()=>say(TN[tq][3]),
+flip:()=>{flip=!flip;cView()},
+again:()=>{deck.push(deck.shift());flip=false;cView()},
+know:()=>{deck.shift();flip=false;cView()},
+cstart:()=>cStart(),
+qstart:()=>qStart(),
+qnext:()=>{qz.i++;qView()},
+print:()=>{try{window.print()}catch(e){}}
+};
+document.addEventListener('click',e=>{
+const f=e.target.closest('[data-act="flip"]');if(f){A.flip();return}
+const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+if(d.say!==undefined)say(d.say);
+if(d.go)show(d.go);
+if(d.lv!==undefined){wl=+d.lv;show('write',1)}
+if(d.clr!==undefined)b.closest('.wb').querySelectorAll('canvas').forEach(c=>c.getContext('2d').clearRect(0,0,c.width,c.height));
+if(d.done){done[d.done]=!done[d.done];save();show(cur,1)}
+if(d.act&&A[d.act])A[d.act]();
+if(d.tone!==undefined){const i=+d.tone,t=TN[tq];const ok=i===tq;$('#tf').innerHTML=ok?`ถูกต้อง: ${t[3]} ${t[4]} (${t[5]}) ลองข้อใหม่`:`ยังไม่ใช่ เสียงที่ได้ยินคือ ${t[1]} ฟังอีกครั้งแล้วเทียบกับรูปเส้นเสียง`;if(ok){tq=Math.floor(Math.random()*4);setTimeout(A.tsay,700)}else say(t[3])}
+if(d.opt!==undefined){const q=qz.qs[qz.i],k=+d.opt,ok=q.opts[k]===q.c;if(ok)qz.s++;document.querySelectorAll('.opt').forEach((o,j)=>{o.disabled=true;if(q.opts[j]===q.c)o.classList.add('good');else if(j===k)o.classList.add('bad')});const c=q.c;$('#qf').innerHTML=`<p><b>${ok?'ถูกต้อง':'ยังไม่ถูก'}</b> · ${c[0]} ${c[1]} = ${c[2]}</p><button class="btn main" data-act="qnext">${qz.i+1>=qz.qs.length?'ดูคะแนน':'ข้อต่อไป'}</button>`;say(c[0])}
+});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('.fc')){e.preventDefault();A.flip()}});
+tq=Math.floor(Math.random()*4);
+const pt=e=>[(e.clientX-pen.r.left)*pen.c.width/pen.r.width,(e.clientY-pen.r.top)*pen.c.height/pen.r.height];
+document.addEventListener('pointerdown',e=>{const c=e.target.closest('.wc canvas');if(!c)return;e.preventDefault();try{c.setPointerCapture(e.pointerId)}catch(x){}const x=c.getContext('2d');pen={c,x,r:c.getBoundingClientRect()};x.strokeStyle=getComputedStyle(document.body).color;x.lineWidth=3*(window.devicePixelRatio||1);x.lineCap=x.lineJoin='round';const p=pt(e);x.beginPath();x.moveTo(p[0],p[1]);x.lineTo(p[0]+.1,p[1]+.1);x.stroke()});
+document.addEventListener('pointermove',e=>{if(!pen)return;const p=pt(e);pen.x.lineTo(p[0],p[1]);pen.x.stroke();pen.x.beginPath();pen.x.moveTo(p[0],p[1])});
+['pointerup','pointercancel'].forEach(t=>document.addEventListener(t,()=>{pen=null}));
+show('start',1);
+</script>
+</body>
+</html>
